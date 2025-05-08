@@ -1,8 +1,15 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtCore import Qt
 from logic import Logic
 class Ui_MainWindow(object):
+    """
+    A class representing a GUI object.
+    """
     def setupUi(self, MainWindow):
+        """
+        The code to set up the UI/GUI.
+        :param MainWindow: The GUI window.
+        :return:
+        """
         MainWindow.setObjectName("Main Street Election")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -53,7 +60,7 @@ class Ui_MainWindow(object):
         self.logic = Logic(self)
         self.pushButton.clicked.connect(self.logic.id_verify)
         self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(260, 480, 211, 20))
+        self.label_4.setGeometry(QtCore.QRect(220, 480, 300, 20))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_4.setFont(font)
@@ -72,6 +79,10 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
+        """
+        Method to load/initialize the GUI.
+        :return: None
+        """
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("Main Street Dog Walker Election", "Main Street Dog Walker Election"))
         self.label.setText(_translate("MainWindow", "ID(4 characters)"))
@@ -81,29 +92,3 @@ class Ui_MainWindow(object):
         self.radioButton_2.setText(_translate("MainWindow", "Jane"))
         self.pushButton.setText(_translate("MainWindow", "SUBMIT VOTE"))
         self.label_4.setText(_translate("MainWindow", ""))
-
-class win_menu(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(200, 200)
-        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(0, 80, 191, 31))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "TextLabel"))
