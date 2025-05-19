@@ -108,4 +108,3 @@ class Logic:
                 f'<span style="color:green;">{win} Won The Election With {vote_total} Votes!</span>')
         else:
             self.ui.label_4.setText(f'<span style="color:green;">{win} Won The Election With {vote_total} Vote!</span>')
-
